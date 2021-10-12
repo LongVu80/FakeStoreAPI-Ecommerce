@@ -7,4 +7,6 @@ Completed the following functions:
 - Add Total to Cart page
 ..
 Still working on:
-Remove items, add or minus number of items on cart page.
+-Remove items
+- add or minus number of items on cart page
+- fix bug on search item
