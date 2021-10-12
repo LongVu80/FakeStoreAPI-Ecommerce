@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background-color:rgb(153, 223, 245);
+  }
+
+  header{
+    background-image: url("../img/cover.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 60px 0 60px;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+nav li span{
+    padding-left: 5px;
+}
+
+li a{
+    padding: 5px;
+    background-color: white;
+    text-decoration: none;
+} 
+.container1{
+    padding: 16px;
+    width: 100%;
+  }
+  .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 15px;
+  }
+
+h3{
+  color: blue;
+}
+
+.ads{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.well{
+  background-color: rgb(240, 167, 71);
+  border: 10px solid blue;
+}
+a {
+  text-decoration: none;
+}
+  .footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+  }
+  .cookie-container {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: #2f3640;
+    color: #f5f6fa;
+    padding: 0 32px;
+    box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+    transition: 400ms;
+  }
+  
+  .cookie-container.active {
+    bottom: 0;
+  }
+  
+  .cookie-container a {
+    color: #f5f6fa;
+  }
+  
+  .cookie-btn {
+    background: #e84118;
+    border: 0;
+    color: #f5f6fa;
+    font-size: 18px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  
+  
+  @media only screen and (min-width: 530px) {
+    .row.content {height: auto;} 
+  }
+@media only screen and (min-width: 900px) {
+  .row.content {height: auto;} 
+}
+
+@media only screen and (min-width: 1100px) {
+  .row.content {height: auto;} 
+}
+.form{
+  display: flex;
+}
+/* #women{
+ margin:10px;
+ border: solid grey;
+} */
+.card{
+    position: relative;
+  margin: 10px;
+  background-color: white;
+  justify-content: center;
+}
+.add-cart{
+    background: #e90612;
+    border: 0;
+    color: #f5f6fa;
+    font-size: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100px;
+    height: 25px;
+}
+
+img.fake {
+  padding: 10px;
+    width: 100%;
+    height: 350px;
+  }
+
+#product{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.product-container{
+  max-width: 650px;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.product-container ion-icon{
+  font-size: 25px;
+  color: blue;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.product-header{
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 4px solid lightgrey;
+  margin: 0 auto;
+}
+.title{
+  width: 45%;
+}
+
+.price{
+  width: 15%;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+}
+.quantity{
+  width: 30%;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+}
+.total{
+  width: 10%;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+}
+.product{
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgrey; 
+}
+.products{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product img{
+  width: 25%;
+}
+
+.basketTotalContainer{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.basketTotalTitle{
+  width: 30%
+}
+
+.basketTotal{
+  width: 10%;
+}
+
+
