@@ -72,6 +72,7 @@ flex-direction: row;
 width: 30%;
 display: flex;
 }
+
 nav li {
   list-style: none;
   display: inline-block;
@@ -201,10 +202,12 @@ margin:10px;
 border: solid grey;
 } */
 .card{
-  position: relative;
+position: relative;
 margin: 10px;
 background-color: white;
 justify-content: center;
+padding: 10px;
+height: 450px;
 }
 .add-cart{
   background: #e90612;
@@ -217,10 +220,20 @@ justify-content: center;
   height: 25px;
 }
 
+.card-body{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
 img.fake {
 padding: 10px;
   width: 100%;
-  height: 350px;
+  height: 250px;
 }
 
 #product{
@@ -228,6 +241,7 @@ display: flex;
 flex-wrap: wrap;
 
 }
+
 
 .product-container{
 max-width: 650px;

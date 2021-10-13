@@ -31,9 +31,11 @@ $(document).ready(function() {
                 p.innerHTML = `<div class='card m-2 border-2' style='width:200px;'>
                 <img src='${item.image}' class='fake'>
                 <div class='card-body'>
-                <p class ='card-title' id='productTitle'> ${item.title} </p>
-                <p class='card-text' id='productPrice'> $${item.price} </p>
-                <button class='add-cart'> add to cart </button>`
+                <h5 class ='card-title' id='productTitle'> ${item.title} </h5>
+                <h3 class='card-text' id='productPrice'> $${item.price} </h3>
+                <button class='add-cart'> add to cart </button>
+                </div>
+                </div>`
                 document.querySelector('#product').appendChild(p)
             })
         }
