@@ -8,7 +8,7 @@ body{
 }
 
 
-header{
+.cartNav{
 background-image: url("../img/cover.jpg");
 background-repeat: no-repeat;
 background-size: cover;
@@ -16,18 +16,18 @@ background-position: center;
 height: 200px;
 /* position: relative; */
 }
-  
 
 .navbar{
-background-image: url("../img/cover.jpg");
-background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  /* position: relative; */
-display: block;
-/* flex-direction: column; */
-}
+  background-image: url("../img/cover.jpg");
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    /* position: relative; */
+  display: block;
+  /* flex-direction: column; */
+  }
+
 
 .search{
 width: 100%;
@@ -68,12 +68,9 @@ display: flex;
 flex-direction: row;
 }
 
-
-
 .header-right{
 width: 30%;
 display: flex;
-justify-content: flex-end;
 }
 nav li {
   list-style: none;
@@ -310,4 +307,19 @@ width: 30%
 width: 10%;
 }
 
-
+.shop {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.left{
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.right{
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
