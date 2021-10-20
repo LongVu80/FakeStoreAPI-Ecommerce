@@ -1,191 +1,145 @@
-const cookieContainer = document.querySelector(".cookie-container");
-const cookieButton = document.querySelector(".cookie-btn");
-
-cookieButton.addEventListener("click", () => {
-  cookieContainer.classList.remove("active");
-  localStorage.setItem("cookieBannerDisplayed", "true");
-});
-
-setTimeout(() => {
-  if (!localStorage.getItem("cookieBannerDisplayed")) {
-    cookieContainer.classList.add("active");
-  }
-}, 2000);
-
 $(document).ready(function() {
 	$.get('https://fakestoreapi.com/products', function (data) {
-        const filters = {
-            searchText: '',
-        }
-        const renderProducts = function (data, filters) {
-            
-            const filterProducts = data.filter(function(item){
-                return item.title.toLowerCase().includes(filters.searchText.toLowerCase())
-            })
-            if(document.getElementById('product') !=null){
-            document.querySelector('#product').innerHTML = ''
-        
 
-            filterProducts.forEach(function(item){
+
+        const renderProducts = function (data) {
+
+            if(document.getElementById('product') !=null){
+            document.querySelector('#product').innerHTML = '';
+            data.forEach(function(item){
                 const p = document.createElement('p')
                 p.innerHTML = `<div class='card m-2 border-2' style='width:200px;'>
                 <img src='${item.image}' class='fake'>
                 <div class='card-body'>
-                <h5 class ='card-title' id='productTitle'> ${item.title} </h5>
-                <h3 class='card-text' id='productPrice'> $${item.price} </h3>
-                <button class='add-cart'> add to cart </button>
-                </div>
-                </div>`
+                <p class ='card-title' id='productTitle'> ${item.title} </p>
+                <p class='card-text' id='productPrice'> $${item.price} </p>
+                <button class='add-cart'> add to cart </button>`
                 document.querySelector('#product').appendChild(p)
             })
         }
-    }
-        renderProducts(data, filters)
-        
-        document.querySelector('#search-text').addEventListener('input', function(e){
-            filters.searchText = e.target.value
-            renderProducts(data, filters)
-        })
+    
+        renderProducts(data)
+       }
 
         let carts = document.querySelectorAll('.add-cart');
         let products = [
           
             {
                 title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-                image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 price: 109.95,
                 tag: "Fjallraven",
                 inCart: 0
               },
               {
                 title: "Mens Casual Premium Slim Fit T-Shirts ",
-                image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-                price: 22.3,
+                price: 44.3,
                 tag: "menTshirt",
                 inCart: 0
               },
               {
                 title: "Mens Cotton Jacket",
                 price: 55.99,
-                image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
                 tag: "menCotton",
                 inCart: 0
               },
               {
                 title: "Mens Casual Slim Fit",
-                image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
                 price: 15.99,
                 tag: "mensCasual",
                 inCart: 0
               },
               {
                 title: "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-                image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
                 price: 695,
                 tag: "nagaGold",
                 inCart: 0
               },
               {
                 title: "Solid Gold Petite Micropave ",
-                image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
                 price: 168,
                 tag: "micropave",
                 inCart: 0
               },
               {
                 title: "White Gold Plated Princess",
-                image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
                 price: 9.99,
                 tag: "goldPlate",
                 inCart: 0
               },
               {
                 title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
-                image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
                 price: 10.99,
                 tag: "owlGold",
                 inCart: 0
               },
               {
                 title: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-                image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
                 price: 64,
                 tag: "usb3",
                 inCart: 0
               },
               {
                 title: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-                image: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
                 price: 109,
                 tag: "sataIII",
                 inCart: 0
               },
               {
                 title: "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-                image: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
                 price: 109,
                 tag: "Boost",
                 inCart: 0
               },
               {
                 title: "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-                image: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
                 price: 114,
                 tag: "gameDrive",
                 inCart: 0
               },
               {
                 title: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-                image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
                 price: 599,
                 tag: "acer",
                 inCart: 0
               },
               {
                 title: "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-                image: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
                 price: 999.99,
                 tag: "samMonitor",
                 inCart: 0
               },
               {
                 title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
-                image: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
                 price: 56.99,
                 tag: "snowJacket",
                 inCart: 0
               },
               {
                 title: "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-                image: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
                 price: 29.95,
                 tag: "bikerJacket",
                 inCart: 0
               },
               {
                 title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-                image: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
                 price: 39.99,
                 tag: "rainCoast",
                 inCart: 0
               },
               {
                 title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
-                image: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
                 price: 9.85,
                 tag: "shortV",
                 inCart: 0
               },
               {
                 title: "Opna Women's Short Sleeve Moisture",
-                image: "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
                 price: 7.95,
                 tag: "Opna",
                 inCart: 0
               },
               {
                 title: "DANVOUY Womens T Shirt Casual Cotton Short",
-                image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
                 price: 12.99,
                 tag: "womanTshirt",
                 inCart: 0
@@ -295,7 +249,7 @@ $(document).ready(function() {
                   <ion-icon class="increase" name="arrow-dropright-circle"></ion-icon>
               </div>
               <div class="total">
-                  $${item.inCart * item.price}
+                  $${item.inCart * item.price}.00
               </div>
               `;
           });
@@ -305,7 +259,7 @@ $(document).ready(function() {
                       Basket Total: 
                   </h4>
                   <h4 class="basketTotal">
-                      $${cartCost}
+                      $${cartCost}.00
                   </h4>
               </div>
           `;
@@ -317,21 +271,17 @@ $(document).ready(function() {
     });
 });
 
-var apiKey = '6b71e45e81339efb68c7b8d995519887'
-
-
-    $('form').submit(function () {
-        var city = $('#city').val();
-        var cityString = `${city}`
-
-        var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityString}&appid=${apiKey}&units=imperial`
-
-        $.get(url, function (res) {
-            console.log(res)
-            var htmlString = `<h1>${cityString}</h1><p>Temperature: ${res.main.temp}&#8457;</p>`
-            htmlString+= `<p>Description: ${res.weather[0].description}</p><p>Wind Speed: ${res.wind.speed} mph</p>`
-            $('#forecast').html(htmlString);
-
-        }, 'json');
-        return false;
-    });
+$("#Psearch").on("keyup", function(){
+  let value = $(this).val();
+  $(".card").each(function(records){
+    if(records !== -1){
+      let id=$(this).find("#productTitle").text();
+    if(id.indexOf(value)!==0 && id.toLowerCase().indexOf(value.toLowerCase())<0){
+      $(this).hide();
+    } else {
+      $(this).show();
+    }
+    }
+    
+  })
+})
