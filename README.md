@@ -10,3 +10,5 @@ Still working on:
 - Remove items
 - add or minus number of items on cart page
 - fix bug on search item
+
+https://longvu80.github.io/FakeStoreAPI-Ecommerce/
